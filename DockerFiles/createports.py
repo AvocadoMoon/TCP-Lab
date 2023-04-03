@@ -5,6 +5,7 @@
 
 import random
 
+## Create random port numbers for raw TCP ports in inetd.conf
 with open("./inetd.conf", "r") as f:
     data = f.read()
 
@@ -15,6 +16,7 @@ with open("./inetd.conf", "r") as f:
     with open("./inetd2.conf", "w") as new:
         new.write(data)
         
+## Create randon port numbers for telnet TCP services        
 with open("./services", "r") as f:
     data = f.read()
     
