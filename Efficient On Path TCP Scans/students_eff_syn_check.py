@@ -23,12 +23,26 @@ def allow_tcp(pkt):
 		elif pkt[TCP].flags & 0x3f == 0x10: # FIN+ACK
 			return False
 
+srcport = random.randint(@@@@, @@@@)
+ip = IP(dst="@@@@")
+openPorts = []
+
+for port_number in range(@@@@):
+    SYN = TCP(dport=port_number, sport=scrport, flags="S", seq=1000)
+    response = src1(ip/SYN) #Sends packet, then gets a response
+
 
 #########################################
 ## Check if these ports support Telnet ##
 #########################################
 
+telnet_ports = []
 
+for port_number in openPorts:
+    try:
+        telnet = telnetlib.Telnet("@@@@")
+    except:
+        continue
 
 
 
