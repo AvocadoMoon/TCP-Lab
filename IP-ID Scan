@@ -1,0 +1,14 @@
+import sys
+from scapy.layers.inet import IP, TCP
+from scapy.all import *
+from ipaddress import IPv4Address
+from random import getrandbits
+import random
+import telnetlib
+
+if __name__ == '__main__':
+    srcport = random.randint(1024, 65535)
+    ip = IP(dst="") # Fill this in
+    SYN = TCP(dport=1, sport=srcport, flags="S", seq=1000) # Fill this in
+    response = sr1(ip/SYN)
+    print(response)
