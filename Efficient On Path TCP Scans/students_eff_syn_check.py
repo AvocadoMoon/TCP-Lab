@@ -23,13 +23,25 @@ def allow_tcp(pkt):
 		elif pkt[TCP].flags & 0x3f == 0x10: # FIN+ACK
 			return False
 
+class HiddenPrints:
+    def __enter__(self):
+        self._original_stdout = sys.stdout
+        sys.stdout = open(os.devnull, 'w')
+
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        sys.stdout.close()
+        sys.stdout = self._original_stdout
+
+
+
 srcport = random.randint(@@@@, @@@@)
 ip = IP(dst="@@@@")
 openPorts = []
 
 for port_number in range(@@@@):
     SYN = TCP(dport=port_number, sport=scrport, flags="S", seq=1000)
-    response = src1(ip/SYN) #Sends packet, then gets a response
+    with HiddenPrints():
+        response = src1(ip/SYN) #Sends packet, then gets a response
 
 
 #########################################
@@ -40,7 +52,8 @@ telnet_ports = []
 
 for port_number in openPorts:
     try:
-        telnet = telnetlib.Telnet("@@@@")
+        with telnetlib.Telnet("@@@@") as telnet:
+            telnet.read_until("@@@", @@@)
     except:
         continue
 
