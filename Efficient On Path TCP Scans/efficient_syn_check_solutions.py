@@ -24,7 +24,7 @@ def allow_tcp(pkt):
             return False
 
 
-
+#Make sure there is no prints
 class HiddenPrints:
     def __enter__(self):
         self._original_stdout = sys.stdout
