@@ -23,6 +23,8 @@ def allow_tcp(pkt):
 		elif pkt[TCP].flags & 0x3f == 0x10: # FIN+ACK
 			return False
 
+
+#----Helps to hide the excessive amount of prints functions may have
 class HiddenPrints:
     def __enter__(self):
         self._original_stdout = sys.stdout
