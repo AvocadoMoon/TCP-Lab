@@ -7,8 +7,7 @@ import random
 import telnetlib
 
 if __name__ == '__main__':
-    srcport = random.randint(1024, 65535)
-    ip = IP(dst="10.9.0.5") # Fill this in
-    SYN = TCP(dport=1049, sport=srcport, flags="S", seq=1000) # Fill this in
+    ip = IP(dst="") # Fill this in
+    SYN = TCP(dport=, sport=, flags=, seq=) # Fill this in
     response = sr1(ip/SYN)
     print(response.show())
