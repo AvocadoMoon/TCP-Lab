@@ -1,3 +1,10 @@
+###################
+## Lab Structure ##
+###################
+The for students folder contains everything that the students should recieve. Solutions folder is the scripts used to get the answer for each question.
+
+
+
 ####################
 ## TCP Scan Setup ##
 ####################
