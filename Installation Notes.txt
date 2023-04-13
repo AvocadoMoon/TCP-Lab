@@ -1,0 +1,7 @@
+####################
+## TCP Scan Setup ##
+####################
+
+1). Put documents within directory "/For Students/Efficient On Path TCP Scans" within a seed lab VM.
+
+2). The rest should be handled by students. The docker containers within this folder will be ran by students, and their scans will be conducted on it.
