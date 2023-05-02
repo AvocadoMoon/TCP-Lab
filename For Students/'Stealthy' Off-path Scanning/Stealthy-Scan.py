@@ -1,3 +1,5 @@
+##Made By Hunter Krasnicki
+
 ##A packet can be created with various custom fields, and in scapy, they are built up in layers
 ##For instance, a packet with custom Ethernet, IP, and TCP fields is constructed like so:
 ## exPkt = Ether()/IP(dst='')/TCP(flags='')
